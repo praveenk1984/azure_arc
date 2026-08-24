@@ -106,7 +106,7 @@ var primarySubnet = [
       networkSecurityGroup: {
         id: networkSecurityGroup.id
       }
-      natGateway: (deployBastion || flavor != 'ITPro') ? {
+      natGateway: (deployBastion || flavor != 'DevOps') ? {
         id: natGateway.id
       } : null
       defaultOutboundAccess: false
@@ -136,7 +136,7 @@ var dataOpsSubnets = [
       networkSecurityGroup: {
         id: networkSecurityGroup.id
       }
-      natGateway: (deployBastion || flavor != 'ITPro') ? {
+      natGateway: (deployBastion || flavor != 'DevOps') ? {
         id: natGateway.id
       } : null
       defaultOutboundAccess: false
@@ -151,7 +151,7 @@ var dataOpsSubnets = [
       networkSecurityGroup: {
         id: networkSecurityGroup.id
       }
-      natGateway: (deployBastion || flavor != 'ITPro')
+      natGateway: (deployBastion || flavor != 'DevOps')
         ? {
             id: natGateway.id
           }
@@ -211,7 +211,7 @@ resource drVirtualNetwork 'Microsoft.Network/virtualNetworks@2024-07-01' = if (f
           networkSecurityGroup: {
             id: networkSecurityGroup.id
           }
-          natGateway: (deployBastion || flavor != 'ITPro') ? {
+          natGateway: (deployBastion || flavor != 'DevOps') ? {
             id: natGatewayDR.id
           } : null
           defaultOutboundAccess: false
