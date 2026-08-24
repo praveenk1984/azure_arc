@@ -76,7 +76,7 @@ param namingPrefix string = 'ArcBox'
   'DevOps'
   'DataOps'
 ])
-param flavor string = 'ITPro'
+param flavor string = 'DevOps'
 
 @description('SQL Server edition to deploy. Valid values are: \'Developer\', \'Standard\', \'Enterprise\'')
 @allowed([
@@ -199,7 +199,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2024-07-01' = {
   }
   properties: {
     hardwareProfile: {
-      vmSize: flavor == 'DevOps' ? 'Standard_B4ms' : flavor == 'DataOps' ? 'Standard_D8s_v5' : 'Standard_D8s_v5'
+      vmSize: flavor == 'DevOps' ? 'Standard_D2s_v7' : flavor == 'DataOps' ? 'Standard_D2s_v7' : 'Standard_D2s_v7'
     }
     storageProfile: {
       osDisk: {
